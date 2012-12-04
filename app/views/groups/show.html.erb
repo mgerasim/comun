@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b><%= Group.human_attribute_name(:name) %>:</b>
+  <%= @group.name %>
+</p>
+
+
+<%= link_to 'Редактировать', edit_group_path(@group) %> |
+<%= link_to 'Назад', groups_path %>

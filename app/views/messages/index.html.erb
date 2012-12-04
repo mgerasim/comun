@@ -1,0 +1,25 @@
+<h1>Список сообщений</h1>
+
+<table>
+  <tr>
+    <th>Клиент</th>
+    <th>Текст</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @messages.each do |message| %>
+  <tr>
+    <td><%= message.client.name %></td>
+    <td><%= message.text %></td>
+    <td><%# link_to 'Показать', message %></td>
+    <td><%# link_to 'Редактировать', edit_message_path(message) %></td>
+    <td><%# link_to 'Удалить', message, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Добавить', new_message_path %>

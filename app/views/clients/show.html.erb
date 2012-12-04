@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b><%= Client.human_attribute_name(:name) %>:</b>
+  <%= @client.name %>
+</p>
+
+<p>
+  <b><%= Client.human_attribute_name(:email) %>:</b>
+  <%= @client.email %>
+</p>
+
+<p>
+  <b><%= Client.human_attribute_name(:smsmail) %>:</b>
+  <%= @client.smsmail %>
+</p>
+
+<%= render 'groups' %>
+
+<%= link_to 'Редактировать', edit_client_path(@client) %> |
+<%= link_to 'Назад', clients_path %>
