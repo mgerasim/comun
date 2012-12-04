@@ -14,7 +14,7 @@
   <% if Client.count{smsmail != nil} != 0 %>
       <div class="field">
         <%= f.label :client %><br />
-        <%= f.select :client_id, Client.where{smsmail != nil}.map { |u| [u.name + ' <' + u.smsmail + '>' , u.id] } %>
+        <%= f.select :client_id, Client.where(:smsmail != nil).map { |u| [u.name + ' <' + u.smsmail + '>' , u.id] } %>
       </div>
       <div class="field">
         <%= f.label :text %><br />
