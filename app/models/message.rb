@@ -4,6 +4,15 @@ class Message < ActiveRecord::Base
   belongs_to :client
   attr_accessible :text, :client_id
 
+  HUMANIZED_ATTRIBUTES = {
+  	:client => "Имя клиента",
+  	:client_id => "Имя клиента",
+  	:text => "Текст сообщения"
+  }
+  def self.human_attribute_name(attr, options={})
+	HUMANIZED_ATTRIBUTES[attr.to_sym] || super
+  end
+
   after_save :sms
 
   def Send( smsmail, smstext )
